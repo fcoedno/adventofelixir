@@ -10,12 +10,12 @@ defmodule AdventOfElixir.Year2015.Day1 do
   end
 
   defp sum_direction(direction, final_floor) do
-      cond do
-        direction == "(" ->
-          final_floor + 1
+    cond do
+      direction == "(" ->
+        final_floor + 1
 
-        direction == ")" ->
-          final_floor - 1
-      end
+      direction == ")" ->
+        final_floor - 1
+    end
   end
 end

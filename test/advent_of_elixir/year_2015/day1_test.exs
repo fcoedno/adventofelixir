@@ -1,5 +1,5 @@
 defmodule AdventOfElixir.Year2015.Day1Test do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import AdventOfElixir.Year2015.Day1, only: [solve: 1]
 
