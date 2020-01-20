@@ -1,9 +1,4 @@
 defmodule AdventOfElixir.Year2015.Day3 do
-  def solve() do
-    File.read!("resources/2015/day3_input.txt")
-    |> solve()
-  end
-
   def solve(input) do
     input
     |> parse_directions()
