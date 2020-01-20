@@ -1,6 +1,6 @@
 defmodule AdventOfElixir.CLI do
   def main([year, day | _]) do
-    IO.puts handle(year, day)
+    IO.puts(handle(year, day))
   end
 
   def main(_) do
@@ -11,16 +11,29 @@ defmodule AdventOfElixir.CLI do
     year = String.to_integer(year)
     day = String.to_integer(day)
 
-    module_name(year, day)
-    |> String.to_existing_atom()
-    |> apply(:solve, [])
+    module =
+      module_name(year, day)
+      |> String.to_existing_atom()
+
+    input =
+      resource_path(year, day)
+      |> File.read!()
+
+    first_solution = apply(module, :solve, [input, :first_part])
+    second_solution = apply(module, :solve, [input, :second_part])
+
+    IO.puts("First part: #{first_solution}\nSecond part: #{second_solution}")
   end
 
   defp module_name(year, day) do
     "Elixir.AdventOfElixir.Year#{year}.Day#{day}"
   end
 
+  defp resource_path(year, day) do
+    "resources/#{year}/day#{day}_input.txt"
+  end
+
   defp print_help_message() do
-    IO.puts "Usage: adventofelixir <year> <day>"
+    IO.puts("Usage: adventofelixir <year> <day>")
   end
 end
