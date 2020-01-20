@@ -18,4 +18,20 @@ defmodule AdventOfElixir.Year2015.Day2Test do
       assert solve(input, :first_part) == 101
     end
   end
+
+  describe "second part" do
+    test "should calculate the amount of ribbon for a single gift" do
+      input = "2x3x4"
+      assert solve(input, :second_part) == 34
+    end
+
+    test "should calculate the amount of ribbon for multiple gifts" do
+      input = """
+      2x3x4
+      1x1x10
+      """
+
+      assert solve(input, :second_part) == 48
+    end
+  end
 end
