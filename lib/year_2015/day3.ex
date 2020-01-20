@@ -1,9 +1,12 @@
 defmodule AdventOfElixir.Year2015.Day3 do
-  def solve(input) do
+  def solve(input, :first_part) do
     input
     |> parse_directions()
     |> apply_directions()
     |> count_visited_houses()
+  end
+
+  def solve(_, :second_part) do
   end
 
   defp parse_directions(input), do: String.split(input, "", trim: true)

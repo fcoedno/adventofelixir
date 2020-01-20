@@ -3,21 +3,23 @@ defmodule AdventOfElixir.Year2015.Day3Test do
 
   import AdventOfElixir.Year2015.Day3, only: [solve: 1]
 
-  test "should count the starting point only when no directions are given" do
-    input = ""
-    assert solve(input) == 1
-  end
+  describe "first part" do
+    test "should count the starting point only when no directions are given" do
+      input = ""
+      assert solve(input, :first_part) == 1
+    end
 
-  test "should count other houses when given more directions" do
-    input = ">"
-    assert solve(input) == 2
-  end
+    test "should count other houses when given more directions" do
+      input = ">"
+      assert solve(input, :first_part) == 2
+    end
 
-  test "should not count repeated houses" do
-    first_input = "^>v<"
-    second_input = "^v^v^v^v^v"
+    test "should not count repeated houses" do
+      first_input = "^>v<"
+      second_input = "^v^v^v^v^v"
 
-    assert solve(first_input) == 4
-    assert solve(second_input) == 2
+      assert solve(first_input, :first_part) == 4
+      assert solve(second_input, :first_part) == 2
+    end
   end
 end

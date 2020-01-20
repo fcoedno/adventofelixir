@@ -42,10 +42,10 @@ defmodule AdventOfElixir.Year2015.Day2 do
   end
 
   defp calculate_ribbon_for_gift(dimension_line, total) do
-    dimensions = dimension_line
-    |> parse_dimension_line()
-    |> Enum.sort(&(&1 >= &2))
-
+    dimensions =
+      dimension_line
+      |> parse_dimension_line()
+      |> Enum.sort(&(&1 >= &2))
 
     ribbon_area = Enum.sum(tl(dimensions)) * 2
     bow_area = Enum.reduce(dimensions, 1.0, &*/2)
