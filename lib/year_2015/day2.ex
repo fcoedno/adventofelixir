@@ -1,7 +1,10 @@
 defmodule AdventOfElixir.Year2015.Day2 do
-  def solve(input) do
+  def solve(input, :first_part) do
     String.split(input, "\n", trim: true)
     |> Enum.reduce(0, &calculate_paper_for_gift/2)
+  end
+
+  def solve(_input, :second_part) do
   end
 
   defp calculate_paper_for_gift(dimension_line, total) do

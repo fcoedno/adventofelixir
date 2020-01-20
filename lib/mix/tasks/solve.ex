@@ -1,9 +1,13 @@
-defmodule AdventOfElixir.CLI do
-  def main([year, day | _]) do
+defmodule Mix.Tasks.Solve do
+  use Mix.Task
+
+  @shortdoc "Prints the solution to advent of code"
+
+  def run([year, day | _]) do
     IO.puts(handle(year, day))
   end
 
-  def main(_) do
+  def run(_) do
     print_help_message()
   end
 
