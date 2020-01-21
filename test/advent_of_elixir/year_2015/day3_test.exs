@@ -1,7 +1,7 @@
 defmodule AdventOfElixir.Year2015.Day3Test do
   use ExUnit.Case, async: true
 
-  import AdventOfElixir.Year2015.Day3, only: [solve: 1]
+  import AdventOfElixir.Year2015.Day3, only: [solve: 2]
 
   describe "first part" do
     test "should count the starting point only when no directions are given" do
@@ -20,6 +20,14 @@ defmodule AdventOfElixir.Year2015.Day3Test do
 
       assert solve(first_input, :first_part) == 4
       assert solve(second_input, :first_part) == 2
+    end
+  end
+
+  describe "second part" do
+    test "should move both santa and his robot" do
+      input = "^v^v^v^v^v"
+
+      assert solve(input, :second_part) == 11
     end
   end
 end

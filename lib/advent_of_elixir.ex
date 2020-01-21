@@ -1,18 +1,24 @@
 defmodule AdventOfElixir do
-  @moduledoc """
-  Documentation for AdventOfElixir.
-  """
+  def solve(year, day) do
+    module =
+      module_name(year, day)
+      |> String.to_existing_atom()
 
-  @doc """
-  Hello world.
+    input =
+      resource_path(year, day)
+      |> File.read!()
 
-  ## Examples
+    first_solution = apply(module, :solve, [input, :first_part])
+    second_solution = apply(module, :solve, [input, :second_part])
 
-      iex> AdventOfElixir.hello()
-      :world
+    IO.puts("First part: #{first_solution}\nSecond part: #{second_solution}")
+  end
 
-  """
-  def hello do
-    :world
+  defp module_name(year, day) do
+    "Elixir.AdventOfElixir.Year#{year}.Day#{day}"
+  end
+
+  defp resource_path(year, day) do
+    "resources/#{year}/day#{day}_input.txt"
   end
 end
