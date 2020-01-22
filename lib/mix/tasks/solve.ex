@@ -7,7 +7,8 @@ defmodule Mix.Tasks.Solve do
     year = String.to_integer(year)
     day = String.to_integer(day)
 
-    AdventOfElixir.solve(year, day)
+    {first_solution, second_solution} = AdventOfElixir.solve(year, day)
+    IO.puts("First part: #{first_solution}\nSecond part: #{second_solution}")
   end
 
   def run(_) do

@@ -11,7 +11,7 @@ defmodule AdventOfElixir do
     first_solution = apply(module, :solve, [input, :first_part])
     second_solution = apply(module, :solve, [input, :second_part])
 
-    IO.puts("First part: #{first_solution}\nSecond part: #{second_solution}")
+    {first_solution, second_solution}
   end
 
   defp module_name(year, day) do
