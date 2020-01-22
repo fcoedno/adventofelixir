@@ -24,3 +24,4 @@ adventofelixir-*.tar
 
 /.elixir_ls
 /adventofelixir
+/.vscode
